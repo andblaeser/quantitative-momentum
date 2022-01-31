@@ -46,7 +46,7 @@ hqm_columns = [
 hqm_dataframe = pd.DataFrame(columns = hqm_columns)
 
 for symbol_string in symbol_strings:
-    batch_api_call_url = f'https://sandbox.iexapis.com/stable/stock/market/batch?symbols={symbol_string}&types=price,stats&token={IEX_CLOUD_API_TOKEN}'
+    batch_api_call_url = f'https://cloud.iexapis.com/stable/stock/market/batch?symbols={symbol_string}&types=price,stats&token={IEX_CLOUD_API_TOKEN}'
     data = requests.get(batch_api_call_url).json()
     for symbol in symbol_string.split(','):
         hqm_dataframe = hqm_dataframe.append(
